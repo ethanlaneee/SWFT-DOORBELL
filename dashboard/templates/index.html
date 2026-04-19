@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SWFT Doorbell</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">SWFT<span>Doorbell</span></div>
+    <div class="status" id="status-indicator">● Connecting…</div>
+  </header>
+
+  <main>
+    <section class="feed-panel">
+      <h2>Live Feed</h2>
+      <div class="snapshot-wrap">
+        <img id="snapshot" src="" alt="No snapshot yet" />
+        <div class="no-feed" id="no-feed">Waiting for camera…</div>
+      </div>
+      <p class="ts" id="last-snapshot-ts"></p>
+    </section>
+
+    <section class="log-panel">
+      <h2>Visitor Log</h2>
+      <ul id="event-list"></ul>
+    </section>
+  </main>
+
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>
