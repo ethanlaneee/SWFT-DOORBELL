@@ -2,7 +2,7 @@ services:
   - type: web
     name: swft-doorbell
     runtime: python
-    buildCommand: pip install -r server/requirements.txt
+    buildCommand: pip install -r requirements.txt
     startCommand: gunicorn -k geventwebsocket.gunicorn.workers.GeventWebSocketWorker -w 1 --chdir server app:app
     envVars:
       - key: SERVER_API_KEY
