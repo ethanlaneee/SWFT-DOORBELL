@@ -23,7 +23,7 @@ app = Flask(
     template_folder="../dashboard/templates",
 )
 CORS(app)
-socketio = SocketIO(app, cors_allowed_origins="*", async_mode="threading")
+socketio = SocketIO(app, cors_allowed_origins="*", async_mode="gevent")
 
 API_KEY: str = os.environ.get("SERVER_API_KEY", "")
 SNAPSHOT_DIR = os.path.join(os.path.dirname(__file__), "data", "snapshots")
@@ -128,4 +128,4 @@ def on_connect():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     logger.info(f"SWFT server starting on port {port}")
-    socketio.run(app, host="0.0.0.0", port=port, debug=False, allow_unsafe_werkzeug=True)
+    socketio.run(app, host="0.0.0.0", port=port, debug=False)

@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: swft-doorbell
+    runtime: python
+    buildCommand: pip install -r server/requirements.txt
+    startCommand: python server/app.py
+    envVars:
+      - key: SERVER_API_KEY
+        generateValue: true
+      - key: PORT
+        value: 10000
+    rootDir: .
