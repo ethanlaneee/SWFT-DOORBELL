@@ -1,5 +1,5 @@
 (function () {
-  const socket = io();
+  const socket = io({ transports: ['websocket'] });
   const snapshotEl = document.getElementById('snapshot');
   const noFeedEl = document.getElementById('no-feed');
   const eventList = document.getElementById('event-list');
