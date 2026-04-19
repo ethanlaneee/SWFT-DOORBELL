@@ -7,3 +7,4 @@ loguru>=0.7.2
 Pillow>=10.3.0
 gevent>=24.2.1
 gevent-websocket>=0.10.1
+gunicorn>=22.0.0
