@@ -1,0 +1,57 @@
+anthropic:
+  api_key: "YOUR_ANTHROPIC_API_KEY"
+  model: "claude-opus-4-7"
+
+server:
+  url: "http://localhost:5000"
+  websocket_url: "ws://localhost:5000/ws"
+  api_key: "YOUR_SERVER_API_KEY"
+
+camera:
+  device_index: 0
+  width: 1280
+  height: 720
+  fps: 30
+  snapshot_interval_seconds: 1
+
+audio:
+  input_device: null        # null = system default microphone
+  output_device: null       # null = system default speaker
+  sample_rate: 16000
+  chunk_size: 1024
+  silence_threshold: 500
+  silence_duration_seconds: 1.5
+
+vision:
+  yolo_model: "yolov8n.pt"
+  face_db_path: "known_faces/"
+  confidence_threshold: 0.5
+  detection_classes:
+    - person
+    - car
+    - truck
+    - bicycle
+    - package
+
+tts:
+  engine: "pyttsx3"         # pyttsx3 | espeak
+  rate: 175
+  volume: 0.9
+  voice_id: null            # null = system default voice
+
+stt:
+  engine: "google"          # google | sphinx (offline)
+  language: "en-US"
+  timeout_seconds: 5
+  phrase_time_limit: 10
+
+doorbell:
+  greeting_message: "Hello! I'm the AI doorbell assistant. How can I help you?"
+  motion_cooldown_seconds: 30
+  conversation_timeout_seconds: 60
+  max_conversation_turns: 6
+
+notifications:
+  webhook_url: null         # POST JSON { event, visitor_name, snapshot_url }
+  notify_on_unknown_visitor: true
+  notify_on_package_delivery: true
