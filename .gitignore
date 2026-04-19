@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.whl
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env/
+
+# Config with secrets
+device/config.yaml
+server/.env
+*.secret
+
+# Data & models
+device/known_faces/
+device/models/*.pt
+server/data/
+*.db
+*.sqlite3
+
+# Logs
+*.log
+logs/
+
+# Media
+snapshots/
+recordings/
+*.jpg
+*.jpeg
+*.png
+*.mp4
+*.wav
+!dashboard/static/*.png
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
